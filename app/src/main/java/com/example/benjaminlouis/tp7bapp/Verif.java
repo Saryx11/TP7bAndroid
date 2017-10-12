@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class Verif extends AppCompatActivity {
     private static int score=0;
-    private int indexQuestions=0;
+    private int questionsIndex =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,18 +21,18 @@ public class Verif extends AppCompatActivity {
         //On vérifie les Intent pour initialiser les paramètres de la classe
         Intent intent = getIntent();
         boolean correct = intent.getBooleanExtra("correct",false);
-        indexQuestions=intent.getIntExtra("index",0);
+        questionsIndex =intent.getIntExtra("index",0);
         //Si l'index est égal à 0 (première question) le score est remis à 0
-        if(indexQuestions==0)
+        if(questionsIndex ==0)
             score=0;
         // On affiche le résultat de la question et augmente le score si la réponse est correcte
         TextView editText = (TextView) findViewById(R.id.texteVerif);
         if(correct) {
-            editText.setText("réponse correcte");
+            editText.setText(R.string.correctAnswer);
             score+=1;
         }
         else {
-            editText.setText("réponse non correcte");
+            editText.setText(R.string.non_correct);
         }
 
         // Ajout du listener sur le bouton et modification de la cible en fonction du nombre
@@ -42,15 +42,17 @@ public class Verif extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("BOUTON","suivant");
-                if(indexQuestions<9){
-                    indexQuestions+=1;
-                    Intent intent = new Intent(Verif.this,AffichageQuestion.class);
-                    intent.putExtra("index", indexQuestions);
+                if(questionsIndex <9){
+                    questionsIndex +=1;
+                    Intent intent = new Intent(Verif.this,QuestionsActivity.class);
+                    intent.putExtra("index", questionsIndex);
                     startActivity(intent);
                 }
                 else{
+                    questionsIndex +=1;
                     Intent intent = new Intent(Verif.this,Bilan.class);
                     intent.putExtra("score",score);
+                    intent.putExtra("nombre",questionsIndex);
                     startActivity(intent);
                 }
 

@@ -2,6 +2,7 @@
     <string name="app_name">TP7bApp</string>
     <string name="suivant">suite</string>
     <string name="recommencer">Recommencer le QCM</string>
-    <string name="correct">Réponse correcte</string>
     <string name="non_correct">Réponse fausse</string>
+    <string name="correctAnswer">Réponse correcte</string>
+    <string name="bilan">Vous avez un score de %1$d sur %2$d</string>
 </resources>
