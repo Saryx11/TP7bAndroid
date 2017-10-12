@@ -1,6 +1,7 @@
 package com.example.benjaminlouis.tp7bapp;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 public class Bilan extends AppCompatActivity {
     int score=0;
+    int numberOfQuestions=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +21,12 @@ public class Bilan extends AppCompatActivity {
         //On vérifie les intent et met à jour le score
         Intent intent = getIntent();
         score = intent.getIntExtra("score",0);
+        numberOfQuestions = intent.getIntExtra("nombre",0);
+
 
         // On affiche le score final
         TextView finalText = (TextView) findViewById(R.id.texteBilan);
-        finalText.setText("Score final : "+score+"/10");
+        finalText.setText(String.format(getResources().getString(R.string.bilan),score,numberOfQuestions));
 
         //On ajoute le listener sur le bouton pour recommencer le quizz et réinitialiser l'index
         Button endButton = (Button) findViewById(R.id.boutonFin);

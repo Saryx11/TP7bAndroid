@@ -28,11 +28,11 @@ public class Verif extends AppCompatActivity {
         // On affiche le résultat de la question et augmente le score si la réponse est correcte
         TextView editText = (TextView) findViewById(R.id.texteVerif);
         if(correct) {
-            editText.setText("réponse correcte");
+            editText.setText(R.string.correctAnswer);
             score+=1;
         }
         else {
-            editText.setText("réponse non correcte");
+            editText.setText(R.string.non_correct);
         }
 
         // Ajout du listener sur le bouton et modification de la cible en fonction du nombre
@@ -49,8 +49,10 @@ public class Verif extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else{
+                    questionsIndex +=1;
                     Intent intent = new Intent(Verif.this,Bilan.class);
                     intent.putExtra("score",score);
+                    intent.putExtra("nombre",questionsIndex);
                     startActivity(intent);
                 }
 
