@@ -5,18 +5,20 @@
     android:layout_width="fill_parent"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/texteQuestions"
+        android:id="@+id/questionsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
-            android:id="@+id/reponse1"
+            android:id="@+id/answer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
         <Button
-            android:id="@+id/reponse2"
+            android:id="@+id/answer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

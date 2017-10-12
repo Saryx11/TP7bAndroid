@@ -5,21 +5,21 @@ package com.example.benjaminlouis.tp7bapp;
  */
 
 public class Question {
-    private String texte;
-    private Reponse rep1;
-    private Reponse rep2;
-    public Question(String texte, Reponse rep1, Reponse rep2){
-        this.texte=texte;
-        this.rep1=rep1;
-        this.rep2=rep2;
+    private String text;
+    private Answer answer1;
+    private Answer answer2;
+    public Question(String text, Answer answer1, Answer answer2){
+        this.text = text;
+        this.answer1 = answer1;
+        this.answer2 = answer2;
     }
-    public String getTexte(){
-        return this.texte;
+    public String getText(){
+        return this.text;
     }
-    public Reponse getReponse1(){
-        return this.rep1;
+    public Answer getReponse1(){
+        return this.answer1;
     }
-    public Reponse getReponse2(){
-        return this.rep2;
+    public Answer getReponse2(){
+        return this.answer2;
     }
 }
