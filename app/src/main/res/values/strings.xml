@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TP7bApp</string>
+    <string name="suivant">suite</string>
+    <string name="recommencer">Recommencer le QCM</string>
+    <string name="correct">Réponse correcte</string>
+    <string name="non_correct">Réponse fausse</string>
+</resources>
