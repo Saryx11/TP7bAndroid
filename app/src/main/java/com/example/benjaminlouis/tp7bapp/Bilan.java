@@ -33,6 +33,7 @@ public class Bilan extends AppCompatActivity {
                 Intent intent = new Intent(Bilan.this,AffichageQuestion.class);
                 intent.putExtra("index", 0);
                 startActivity(intent);
+                
             }
         });
 
